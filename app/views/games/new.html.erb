@@ -1,0 +1,15 @@
+<h1> New.html </h1>
+<h2> Select longest word </h2>
+<%= @grid %> <br>
+
+
+
+<%= "Make the longest word using the above letters" %>
+<form action="/score" data-turbo="false" method="post">
+  <input type="text" name="user_input">
+  <input type="submit" value="ok">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+
+
+<% check_user_input_valid(@user_input, @grid) %>
